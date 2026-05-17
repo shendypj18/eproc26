@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-inherit="SellerDashBoard" t-inherit-mode="extension">
+        <!-- MarketPlace Product -> BoQ -->
+        <xpath expr="//h5[contains(text(), 'MarketPlace Product')]" position="replace">
+            <h5 class="card-title">BoQ</h5>
+        </xpath>
+
+        <!-- MarketPlace Sellers -> Vendors -->
+        <xpath expr="//h5[contains(text(), 'MarketPlace Sellers')]" position="replace">
+            <h5 class="card-title">Vendors</h5>
+        </xpath>
+
+        <!-- MarketPlace Orders -> Project -->
+        <xpath expr="//h5[contains(text(), 'MarketPlace Orders')]" position="replace">
+            <h5 class="card-title">Project</h5>
+        </xpath>
+
+        <!-- Status Shipped -> Completed -->
+        <xpath expr="//div[@id='divorder_shipped']/h5" position="replace">
+            <h5 style="margin-top: 5px;">
+                <span id="order_shipped"> </span>
+                Completed
+            </h5>
+        </xpath>
+
+        <!-- MarketPlace Payments -> Payments -->
+        <xpath expr="//h5[contains(text(), 'MarketPlace Payments')]" position="replace">
+            <h5 class="card-title">Payments</h5>
+        </xpath>
+
+        <!-- Marketplace stock -> hide -->
+        <xpath expr="//h5[contains(text(), 'Marketplace stock')]/../.." position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+    </t>
+</templates>

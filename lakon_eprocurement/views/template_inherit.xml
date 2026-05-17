@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Seller product page: "Seller Contact" → "Vendor Contract" -->
+    <template id="seller_product_inherit" inherit_id="multi_vendor_marketplace.seller_product">
+        <xpath expr="//a[@id='seller_contact1']" position="replace">
+            <a class="nav-link" id="seller_contact1" data-bs-toggle="tab"
+               href="#seller_contact2" role="tab"
+               aria-controls="seller_contact2"
+               aria-selected="false">Vendor Contract</a>
+        </xpath>
+    </template>
+
+    <!-- Sell page: "5,000 Sellers...Marketplace Store" → "5,000 Vendors...Store" -->
+    <template id="sell_page_inherit" inherit_id="multi_vendor_marketplace.sell_page">
+        <xpath expr="//h2[contains(@class,'o_default_snippet_text')][contains(text(),'5,000')]" position="replace">
+            <h2 class="text-center o_default_snippet_text"
+                style="padding:5px;">More than 5,000 Vendors are part
+                of our Store,<br/>Join us today and get
+                all the excited perks.
+            </h2>
+        </xpath>
+    </template>
+
+    <!-- Footer: "Seller List" → "Vendor List" -->
+    <template id="seller_footer_inherit" inherit_id="multi_vendor_marketplace.seller_footer">
+        <xpath expr="//a[@href='/seller/list'][not(child::t)]" position="replace">
+            <a href="/seller/list">Vendor List</a>
+        </xpath>
+    </template>
+</odoo>

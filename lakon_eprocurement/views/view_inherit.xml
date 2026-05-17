@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Seller Shop form: kanban product label "Seller" → "Vendor" -->
+    <record id="seller_shop_form_inherit" model="ir.ui.view">
+        <field name="name">lakon.seller.shop.form.inherit</field>
+        <field name="model">seller.shop</field>
+        <field name="inherit_id" ref="multi_vendor_marketplace.seller_shop_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban//field[@name='seller_id']/.." position="replace">
+                <div>
+                    Vendor
+                    <field name="seller_id"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Seller Shop kanban: label "Seller:" → "Vendor:" -->
+    <record id="seller_shop_kanban_inherit" model="ir.ui.view">
+        <field name="name">lakon.seller.shop.kanban.inherit</field>
+        <field name="model">seller.shop</field>
+        <field name="inherit_id" ref="multi_vendor_marketplace.seller_shop_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='seller_id']" position="replace">
+                <div name="seller_id" class="mt-1">
+                    Vendor:
+                    <field name="seller_id"/>
+                    <div name="total product" class="mt-1">
+                        Total Product:
+                        <field name="product_count"/>
+                    </div>
+                    <div class="o_kanban_image" style="position:absolute;left:280px;">
+                        <field name="seller_image" widget="image"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Seller Review kanban: "Seller:" → "Vendor:" -->
+    <record id="seller_review_kanban_inherit" model="ir.ui.view">
+        <field name="name">lakon.seller.review.kanban.inherit</field>
+        <field name="model">seller.review</field>
+        <field name="inherit_id" ref="multi_vendor_marketplace.seller_review_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//strong[text()='Seller:']" position="replace">
+                <strong>Vendor:</strong>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Seller Recommend kanban: "Seller:" → "Vendor:" -->
+    <record id="seller_recommend_kanban_inherit" model="ir.ui.view">
+        <field name="name">lakon.seller.recommend.kanban.inherit</field>
+        <field name="model">seller.recommend</field>
+        <field name="inherit_id" ref="multi_vendor_marketplace.seller_recommend_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//strong[text()='Seller:']" position="replace">
+                <strong>Vendor:</strong>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inventory Request kanban: "Seller:" → "Vendor:" -->
+    <record id="inventory_request_kanban_inherit" model="ir.ui.view">
+        <field name="name">lakon.inventory.request.kanban.inherit</field>
+        <field name="model">inventory.request</field>
+        <field name="inherit_id" ref="multi_vendor_marketplace.inventory_request_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='seller_id'][last()]" position="replace">
+                <div name="seller_id">
+                    <b>Vendor:</b>
+                    <field name="seller_id"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Stock Moves kanban: "Seller:" → "Vendor:" -->
+    <record id="stock_moves_kanban_inherit" model="ir.ui.view">
+        <field name="name">lakon.stock.moves.kanban.inherit</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="multi_vendor_marketplace.stock_moves_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='seller_id']" position="replace">
+                <div name="seller_id" class="mt-1">
+                    Vendor:
+                    <field name="partner_id"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Empty list placeholder: "Seller Shop" → "Vendor Shop" -->
+    <record id="multi_vendor_marketplace.seller_shop_action" model="ir.actions.act_window">
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Vendor Shop</p>
+        </field>
+    </record>
+
+    <!-- Empty list placeholder: "Seller's Payment" → "Payment" -->
+    <record id="multi_vendor_marketplace.seller_payment_action" model="ir.actions.act_window">
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Payment</p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu: "Seller Dashboard" → "Vendor Dashboard" -->
+    <record id="multi_vendor_marketplace.seller_root" model="ir.ui.menu">
+        <field name="name">Vendor Dashboard</field>
+    </record>
+
+    <!-- Menu: "Seller" → "Vendor" -->
+    <record id="multi_vendor_marketplace.seller" model="ir.ui.menu">
+        <field name="name">Vendor</field>
+    </record>
+
+    <!-- Menu: "Sellers" → "Vendors" -->
+    <record id="multi_vendor_marketplace.seller_ecom" model="ir.ui.menu">
+        <field name="name">Vendors</field>
+    </record>
+
+    <!-- Menu: "Seller Shop" → "Vendor Shop" -->
+    <record id="multi_vendor_marketplace.seller_shop" model="ir.ui.menu">
+        <field name="name">Vendor Shop</field>
+    </record>
+
+    <!-- Menu: "Seller Reviews" → "Vendor Reviews" -->
+    <record id="multi_vendor_marketplace.seller_reviews" model="ir.ui.menu">
+        <field name="name">Vendor Reviews</field>
+    </record>
+
+    <!-- Menu: "Seller Recommendation" → "Vendor Recommendation" -->
+    <record id="multi_vendor_marketplace.seller_recommend" model="ir.ui.menu">
+        <field name="name">Vendor Recommendation</field>
+    </record>
+
+    <!-- Menu: "Seller Payment" → "Payment" -->
+    <record id="multi_vendor_marketplace.seller_payment" model="ir.ui.menu">
+        <field name="name">Payment</field>
+    </record>
+
+    <!-- Menu: "Seller Bill" → "Vendor Bill" -->
+    <record id="multi_vendor_marketplace.seller_bill" model="ir.ui.menu">
+        <field name="name">Vendor Bill</field>
+    </record>
+
+    <!-- Action: "Seller Dashboard" → "Vendor Dashboard" -->
+    <record id="multi_vendor_marketplace.seller_dashboard_action" model="ir.actions.client">
+        <field name="name">Vendor Dashboard</field>
+    </record>
+
+    <!-- Action: "Seller Shop" → "Vendor Shop" -->
+    <record id="multi_vendor_marketplace.seller_shop_action" model="ir.actions.act_window">
+        <field name="name">Vendor Shop</field>
+    </record>
+
+    <!-- Action: "Seller Payment" → "Payment" -->
+    <record id="multi_vendor_marketplace.seller_payment_action" model="ir.actions.act_window">
+        <field name="name">Payment</field>
+    </record>
+
+    <!-- Action: "Seller Review" → "Vendor Review" -->
+    <record id="multi_vendor_marketplace.seller_review_action" model="ir.actions.act_window">
+        <field name="name">Vendor Review</field>
+    </record>
+
+    <!-- Action: "Seller Recommend" → "Vendor Recommendation" -->
+    <record id="multi_vendor_marketplace.seller_recommend_action" model="ir.actions.act_window">
+        <field name="name">Vendor Recommendation</field>
+    </record>
+</odoo>
